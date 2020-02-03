@@ -1,53 +1,76 @@
 # SOAL 1
 
-number = input("In: ")
-number = int(number)
+# number = input("In: ")
+# number = int(number)
 
-l = []
-# number = 4
-for i in range(1, number+1, 1):
-    var1 = [i]*i
-    l.append(var1)
-print(l)
+# l = []
+# # number = 4
+# for i in range(1, number+1, 1):
+#     var1 = [i]*i
+#     l.append(var1)
+# print(l)
 
-bar1 = []
-for loop in range(len(l)): #range(0,4,1) #0,1,2,3
-    for loop2 in range(0, loop+1):
-        bar1.append(l[loop][loop2])
-for loop in range(-2, -len(l)-1, -1): #0,-1,-2,-3
-    for loop2 in range(len(l[loop])):
-        bar1.append(l[loop][loop2])
+# bar1 = []
+# for loop in range(len(l)): #range(0,4,1) #0,1,2,3
+#     for loop2 in range(0, loop+1):
+#         bar1.append(l[loop][loop2])
+# for loop in range(-2, -len(l)-1, -1): #0,-1,-2,-3
+#     for loop2 in range(len(l[loop])):
+#         bar1.append(l[loop][loop2])
 
-j = 0
-while j < number:
-    z = ''
-    for i in bar1:
-        if i == j or i <j:
-            z += '#'
-        elif i != j:
-            z += str(i)
-    j += 1
-    print(z)
+# j = 0
+# while j < number:
+#     z = ''
+#     for i in bar1:
+#         if i == j or i <j:
+#             z += '#'
+#         elif i != j:
+#             z += str(i)
+#     j += 1
+#     print(z)
 
 # SOAL 2
 
-# # sentence2 = input('In: ')
-# kalimat = 'Saya beli 23 bungkus roti'
+# sentence2 = input('In: ')
+kalimat = 'Saya beli 23 bungkus roti'
 
-# lsangka = []
-# lskal = []
+lsangka = []
+lskal = []
 
-# for i in kalimat.split():
-#     if i.isdigit() == True:
-#         lsangka.append(int(i))
-#         lskal.append('temp1')
-#     else:
-#         lskal.append(i)
+for i in kalimat.split():
+    if i.isdigit() == True:
+        lsangka.append(int(i))
+        lskal.append('temp1')
+    else:
+        lskal.append(i)
 
-# # print('lsangka', lsangka)
-# # print('lskalimat', lskal)
+# print('lsangka', lsangka)
+# print('lskalimat', lskal)
 
-# num = 15234
+
+#### Testing --> Buat Function
+
+# print(237/10) #23.7
+# print(237%100) #37
+num = 15234
+numstr = str(num) # '15234'
+numdiv = list(map(int, numstr)) # [1,5,2,3,4]
+
+# print(numstr.split())
+# print(list(map(int, numstr)))
+
+dictNum = {}
+numLoop = len(numstr)-1
+for digits, unit in zip(numstr, numdiv):
+    
+    # newNum = num%(10**numLoop)
+    # print(numLoop, newNum, numdiv)
+    pangkat = 10**numLoop
+    numLoop -= 1
+    # dictNum[]
+    
+
+
 
 # transformNum = []
 
