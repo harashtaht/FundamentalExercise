@@ -54,21 +54,51 @@ for i in kalimat.split():
 # print(237%100) #37
 num = 15234
 numstr = str(num) # '15234'
-numdiv = list(map(int, numstr)) # [1,5,2,3,4]
+numdiv = list(map(int, numstr)) # [1,5,2,3,4] #type = integers
 
 # print(numstr.split())
 # print(list(map(int, numstr)))
 
 dictNum = {}
 numLoop = len(numstr)-1
-for digits, unit in zip(numstr, numdiv):
-    
-    # newNum = num%(10**numLoop)
-    # print(numLoop, newNum, numdiv)
-    pangkat = 10**numLoop
-    numLoop -= 1
-    # dictNum[]
-    
+for digits in numdiv:
+    dictNum[digits] = 10**numLoop
+    numLoop -=1
+
+# print(12000%10000)
+# print(12%10)
+
+belas = []
+lainnya = []
+
+# for i in dictNum:
+#     # print(i, dictNum[i], i*dictNum[i])
+#     cond1 = (dictNum[i] == 10000 or dictNum[i] == 10) and (i == 1)
+#     if cond1 == True:
+#         belas.append(i)
+#     elif:
+
+#     else:
+#         lainnya.append(i)
+
+
+
+# print(list(enumerate(dictNum)))
+
+# for index, (key, value) in enumerate(dictNum.items()):
+#     # print(index, key, value)
+#     cond1 = (dictNum[key] == 10000 or dictNum[key] == 10) and (key == 1)
+#     if cond1 == True:
+#         idx = index+1
+#         belas.append(key)
+        
+#         # print(index, key, value)
+#     # elif 
+#     else:
+#         lainnya.append(key)
+
+# print(belas)
+# print(lainnya)
 
 
 
