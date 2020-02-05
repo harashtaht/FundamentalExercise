@@ -65,8 +65,8 @@ for digits in numdiv:
     dictNum[digits] = 10**numLoop
     numLoop -=1
 
-# print(12000%10000)
-# print(12%10)
+print(12000%10000)
+print(12%10)
 
 belas = []
 lainnya = []
