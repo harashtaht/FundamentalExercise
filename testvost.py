@@ -68,7 +68,7 @@ for digits in numdiv:
 belas = []
 lainnya = []
 
-print(dictNum)
+# print(dictNum)
 
 for i in dictNum:
     # print(i, dictNum[i], i*dictNum[i])
@@ -105,7 +105,7 @@ for i in dictNum:
     output.append(dictAlfa[i])
     output.append(dictAlfa[dictNum[i]])
 
-print(output)
+# print(output)
 # ['satu', 'puluh ribu', 'lima', 'ribu', 'dua', 'ratus', 'tiga', 'puluh', 'empat', 'satu']
 # dibagi per 3 angka
 
@@ -138,6 +138,50 @@ print(output)
 
 
 # print('transformNum : ', transformNum)
+
+##### cara Mila
+import re
+
+def alphabetify(num):
+    number = ['', ' satu', ' dua', ' tiga', ' empat', ' lima', ' enam', ' tujuh', ' delapan', ' sembilan', ' sepuluh', ' sebelas']
+    result =""
+    n = int(num)
+    if n >= 0 and n <= 11:
+        result = result + number[n]
+    elif n < 20:
+        result = alphabetify(n % 10) + " belas"
+    elif n < 100:
+        result = alphabetify(n / 10) + " puluh" + alphabetify(n % 10)
+    elif n < 200:
+        result = " Seratus" + alphabetify(n - 100)
+    elif n < 1000:
+        result = alphabetify(n / 100) + " ratus" + alphabetify(n %100)
+    elif n < 2000:
+        result = " Seribu" + alphabetify(n-1000)
+    elif n < 1000000:
+        result = alphabetify(n / 1000) + " ribu" + alphabetify(n % 1000)
+    elif n < 1000000000:
+        result = alphabetify(n/1000000) + " juta" + alphabetify(n % 1000000)
+    else:
+        result = alphabetify(n / 1000000000) + " milyar" + alphabetify(n % 1000000000)
+    return result
+
+def num_str(str): 
+    array = re.findall(r'[0-9]+', str) 
+    return array 
+
+# wordIn = input('In: ')
+wordIn = 'Saya membeli 2319 bungkus roti'
+list_ = wordIn.split(' ')
+list_1 = []
+
+# for i in list_:
+#     try:
+#         list_1.append(alphabetify(*num_str(i))) 
+#     except:
+#         list_1.append(i)
+
+# print(num_str('Saya membeli 2319 bungkus roti'))
 
 #capitalize
 
