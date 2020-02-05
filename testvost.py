@@ -31,115 +31,6 @@
 
 # SOAL 2
 
-# sentence2 = input('In: ')
-kalimat = 'Saya beli 23 bungkus roti'
-
-lsangka = []
-lskal = []
-
-for i in kalimat.split():
-    if i.isdigit() == True:
-        lsangka.append(int(i))
-        lskal.append('temp1')
-    else:
-        lskal.append(i)
-
-# print('lsangka', lsangka)
-# print('lskalimat', lskal)
-
-
-#### Testing --> Buat Function
-
-# print(237/10) #23.7
-# print(237%100) #37
-num = 15234
-numstr = str(num) # '15234'
-numdiv = list(map(int, numstr)) # [1,5,2,3,4] #type = integers
-
-# print(numstr.split())
-# print(list(map(int, numstr)))
-
-dictNum = {}
-numLoop = len(numstr)-1
-for digits in numdiv:
-    dictNum[digits] = 10**numLoop
-    numLoop -=1
-
-belas = []
-lainnya = []
-
-# print(dictNum)
-
-for i in dictNum:
-    # print(i, dictNum[i], i*dictNum[i])
-    cond1 = (dictNum[i] == 10000 or dictNum[i] == 10) and (i == 1)
-    if cond1 == True:
-        belas.append(i)
-    # elif:
-    #     continue 
-    else:
-        lainnya.append(i)
-
-
-def alfabetanum(dict):
-    output = []
-    dictAlfa = {
-        1: 'satu', 2: 'dua', 3: 'tiga', 4: 'empat', 5: 'lima', 
-        6: 'enam', 7: 'tujuh', 8: 'delapan', 9: 'sembilan', 
-        10**6 : 'juta', 10**5: 'ratus ribu', 10**4: 'puluh ribu',
-        10**3 : 'ribu', 10**2: 'ratus', 10: 'puluh'}
-    for i in dict:
-        output.append(dictAlfa[i])
-        output.append(dictAlfa[dictAlfa[i]])
-
-# for i in dictNum:
-#     print(i)
-
-output= []
-dictAlfa = {
-    1: 'satu', 2: 'dua', 3: 'tiga', 4: 'empat', 5: 'lima', 
-    6: 'enam', 7: 'tujuh', 8: 'delapan', 9: 'sembilan', 
-    10**6 : 'juta', 10**5: 'ratus ribu', 10**4: 'puluh ribu',
-    10**3 : 'ribu', 10**2: 'ratus', 10: 'puluh'}
-for i in dictNum:
-    output.append(dictAlfa[i])
-    output.append(dictAlfa[dictNum[i]])
-
-# print(output)
-# ['satu', 'puluh ribu', 'lima', 'ribu', 'dua', 'ratus', 'tiga', 'puluh', 'empat', 'satu']
-# dibagi per 3 angka
-
-
-# print(list(enumerate(dictNum)))
-
-# for index, (key, value) in enumerate(dictNum.items()):
-#     # print(index, key, value)
-#     cond1 = (dictNum[key] == 10000 or dictNum[key] == 10) and (key == 1)
-#     if cond1 == True:
-#         idx = index+1
-#         belas.append(key)
-        
-#         # print(index, key, value)
-#     # elif 
-#     else:
-#         lainnya.append(key)
-
-# print(belas)
-# print(lainnya)
-
-# transformNum = []
-
-# for i in range(len(str(num)), 0, -1):
-#     num0 = 0
-#     num0 += num%10**i #[15234, 5234, 234, 34, 4]
-#     # print(10**i)
-#     # numAdd = num%10**i
-#     transformNum.append(num0)
-
-
-# print('transformNum : ', transformNum)
-
-##### cara Mila
 import re
 
 def alphabetify(num):
@@ -170,24 +61,15 @@ def num_str(str):
     array = re.findall(r'[0-9]+', str) 
     return array 
 
-# wordIn = input('In: ')
-wordIn = 'Saya membeli 2319 bungkus roti'
+wordIn = input('In: ')
 list_ = wordIn.split(' ')
 list_1 = []
 
-# for i in list_:
-#     try:
-#         list_1.append(alphabetify(*num_str(i))) 
-#     except:
-#         list_1.append(i)
-
-# print(num_str('Saya membeli 2319 bungkus roti'))
-
-#capitalize
-
-# print(15234//10)
-# print(15234/10)
-# print(15234%1000)
+for i in list_:
+    try:
+        list_1.append(alphabetify(*num_str(i))) 
+    except:
+        list_1.append(i)
 
 # SOAL 3
 # numIn = input('In: ')
