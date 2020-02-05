@@ -65,22 +65,49 @@ for digits in numdiv:
     dictNum[digits] = 10**numLoop
     numLoop -=1
 
-print(12000%10000)
-print(12%10)
-
 belas = []
 lainnya = []
 
+print(dictNum)
+
+for i in dictNum:
+    # print(i, dictNum[i], i*dictNum[i])
+    cond1 = (dictNum[i] == 10000 or dictNum[i] == 10) and (i == 1)
+    if cond1 == True:
+        belas.append(i)
+    # elif:
+    #     continue 
+    else:
+        lainnya.append(i)
+
+
+def alfabetanum(dict):
+    output = []
+    dictAlfa = {
+        1: 'satu', 2: 'dua', 3: 'tiga', 4: 'empat', 5: 'lima', 
+        6: 'enam', 7: 'tujuh', 8: 'delapan', 9: 'sembilan', 
+        10**6 : 'juta', 10**5: 'ratus ribu', 10**4: 'puluh ribu',
+        10**3 : 'ribu', 10**2: 'ratus', 10: 'puluh'}
+    for i in dict:
+        output.append(dictAlfa[i])
+        output.append(dictAlfa[dictAlfa[i]])
+
 # for i in dictNum:
-#     # print(i, dictNum[i], i*dictNum[i])
-#     cond1 = (dictNum[i] == 10000 or dictNum[i] == 10) and (i == 1)
-#     if cond1 == True:
-#         belas.append(i)
-#     elif:
+#     print(i)
 
-#     else:
-#         lainnya.append(i)
+output= []
+dictAlfa = {
+    1: 'satu', 2: 'dua', 3: 'tiga', 4: 'empat', 5: 'lima', 
+    6: 'enam', 7: 'tujuh', 8: 'delapan', 9: 'sembilan', 
+    10**6 : 'juta', 10**5: 'ratus ribu', 10**4: 'puluh ribu',
+    10**3 : 'ribu', 10**2: 'ratus', 10: 'puluh'}
+for i in dictNum:
+    output.append(dictAlfa[i])
+    output.append(dictAlfa[dictNum[i]])
 
+print(output)
+# ['satu', 'puluh ribu', 'lima', 'ribu', 'dua', 'ratus', 'tiga', 'puluh', 'empat', 'satu']
+# dibagi per 3 angka
 
 
 # print(list(enumerate(dictNum)))
@@ -99,8 +126,6 @@ lainnya = []
 
 # print(belas)
 # print(lainnya)
-
-
 
 # transformNum = []
 
