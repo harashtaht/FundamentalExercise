@@ -76,6 +76,50 @@
 # in_ = input('In: ')
 in_ = 'Saya beli dua puluh tiga bungkus roti'
 
+# def numerify(str):
+#     number = ['', ' satu', ' dua', ' tiga', ' empat', ' lima', ' enam', ' tujuh', ' delapan', ' sembilan', ' sepuluh', ' sebelas']
+#     result =""
+#     n = int(num)
+#     if n >= 0 and n <= 11:
+#         result = result + number[n]
+#     elif n < 20:
+#         result = alphabetify(n % 10) + " belas"
+#     elif n < 100:
+#         result = alphabetify(n / 10) + " puluh" + alphabetify(n % 10)
+#     elif n < 200:
+#         result = " Seratus" + alphabetify(n - 100)
+#     elif n < 1000:
+#         result = alphabetify(n / 100) + " ratus" + alphabetify(n %100)
+#     elif n < 2000:
+#         result = " Seribu" + alphabetify(n-1000)
+#     elif n < 1000000:
+#         result = alphabetify(n / 1000) + " ribu" + alphabetify(n % 1000)
+#     elif n < 1000000000:
+#         result = alphabetify(n/1000000) + " juta" + alphabetify(n % 1000000)
+#     else:
+#         result = alphabetify(n / 1000000000) + " milyar" + alphabetify(n % 1000000000)
+#     return result
+
+wordIn_ = 'Saya beli dua puluh tiga bungkus roti'
+list_ = wordIn_.split(' ')
+list_1 = []
+
+# print(list_)
+
+# def separateNum(list):
+#     for i in list:
+
+for i in list_:
+    try:
+        list_1.append(alphabetify(*num_str(i))) 
+    except:
+        list_1.append(i)
+
+
+
+# wordIn = input('In: ')
+# list_ = wordIn.split(' ')
+# list_1 = []
 
 # numIn = input('In: ')
 # numIn = numIn.lower()
