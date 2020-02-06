@@ -126,4 +126,40 @@ def numFind(list_):
             list_2.append(j)
     return list_2
 
-print(numFind(list_))
+# print(numFind(list_))
+list_2 = ['saya', 'beli', 2, 10, 3, 'bungkus', 'roti']
+
+for i in range(len(list_2)):
+    # list_Kalimat = []
+    # list_Angka = []
+    # print(list_2[i])
+    num = 0
+    if type(list_2[i]) == int:
+        # print(list_2[i])
+        
+        if list_2[i]%10 != 0:
+            num += list_2[i]
+
+        elif list_2[i]%10 == 0:
+            num *= list_2[i]
+        
+        else:
+            print(f'num = {num}')
+        # print(f'{i} == integer')
+        # if list_2[i]
+        # list_Angka.append(i)
+    else:
+        continue
+        # print(i)
+        # continue
+        # list_Kalimat.append(i)
+
+# print(2%10)
+# print(10%10)
+# print(1000%10)
+
+# print(list_Angka)
+# print(list_Kalimat)
+
+# def numLetter(list_2):
+#     for i in list_2:
