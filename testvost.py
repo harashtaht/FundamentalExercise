@@ -76,31 +76,7 @@
 # in_ = input('In: ')
 in_ = 'Saya beli dua puluh tiga bungkus roti'
 
-# def numerify(str):
-#     number = ['', ' satu', ' dua', ' tiga', ' empat', ' lima', ' enam', ' tujuh', ' delapan', ' sembilan', ' sepuluh', ' sebelas']
-#     result =""
-#     n = int(num)
-#     if n >= 0 and n <= 11:
-#         result = result + number[n]
-#     elif n < 20:
-#         result = alphabetify(n % 10) + " belas"
-#     elif n < 100:
-#         result = alphabetify(n / 10) + " puluh" + alphabetify(n % 10)
-#     elif n < 200:
-#         result = " Seratus" + alphabetify(n - 100)
-#     elif n < 1000:
-#         result = alphabetify(n / 100) + " ratus" + alphabetify(n %100)
-#     elif n < 2000:
-#         result = " Seribu" + alphabetify(n-1000)
-#     elif n < 1000000:
-#         result = alphabetify(n / 1000) + " ribu" + alphabetify(n % 1000)
-#     elif n < 1000000000:
-#         result = alphabetify(n/1000000) + " juta" + alphabetify(n % 1000000)
-#     else:
-#         result = alphabetify(n / 1000000000) + " milyar" + alphabetify(n % 1000000000)
-#     return result
-
-wordIn_ = 'Saya beli dua puluh tiga bungkus roti'
+wordIn_ = 'Saya beli sembilan ratus dua puluh tiga bungkus roti'
 list_ = wordIn_.lower().split(' ')
 list_1 = []
 
@@ -118,7 +94,7 @@ def numFind(list_):
             
     list_2 = []
     puluhDict = {'puluh':10, 'ratus':10**2, 'ribu':10**3, 'puluh ribu':10**4, 'ratus ribu':10**5, 'juta':10**6, 'puluh juta':10**7, 'ratus juta':10**8, 'milyar':10**9}
-    
+
     for j in list_1:
         try:
             list_2.append(puluhDict[j])
@@ -126,40 +102,38 @@ def numFind(list_):
             list_2.append(j)
     return list_2
 
-# print(numFind(list_))
-list_2 = ['saya', 'beli', 2, 10, 3, 'bungkus', 'roti']
+list_2 = numFind(list_)
+# list_2 = ['saya', 'beli', 2, 10, 3, 'bungkus', 'roti']
 
+list_Kalimat = []
+num = 0
 for i in range(len(list_2)):
-    # list_Kalimat = []
-    # list_Angka = []
-    # print(list_2[i])
-    num = 0
+    
     if type(list_2[i]) == int:
-        # print(list_2[i])
-        
-        if list_2[i]%10 != 0:
+        if (list_2[i]%10 ==0):
+            num *= list_2[i]
+
+        elif (list_2[i]%10 !=0):
             num += list_2[i]
 
-        elif list_2[i]%10 == 0:
-            num *= list_2[i]
-        
-        else:
-            print(f'num = {num}')
-        # print(f'{i} == integer')
-        # if list_2[i]
-        # list_Angka.append(i)
-    else:
-        continue
-        # print(i)
-        # continue
-        # list_Kalimat.append(i)
+    elif type(list_2[i-1]) == int and type(list_2[i] == str):
+        list_Kalimat.append(num)
+    
+    elif type(list_2[i]) == str:
+        list_Kalimat.append(list_2[i])
 
-# print(2%10)
-# print(10%10)
-# print(1000%10)
-
-# print(list_Angka)
 # print(list_Kalimat)
+# ['saya', 'beli', 23, 'roti']
 
-# def numLetter(list_2):
-#     for i in list_2:
+def makingSentence(list_Kalimat):
+    result = ''
+    for i in list_Kalimat:
+        if type(i) == str:
+            result += i + ' '
+
+        elif type(i) == int:
+            result += str(i) + ' '
+    
+    return print(result.capitalize())
+
+makingSentence(list_Kalimat)
