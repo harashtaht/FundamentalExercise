@@ -73,6 +73,8 @@
 
 # SOAL 3
 
+
+
 # numIn = input('In: ')
 # numIn = numIn.lower()
 # numIn = 'dua puluh tiga'
@@ -112,3 +114,8 @@
 # dictPul = dict(zip(puluhBet, puluhNum))
 
 # print(dictPul)
+
+
+# buat fungsi untuk split per spasi
+# dictionary angka
+# dikali 10^^ sesuai len(num)
