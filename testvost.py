@@ -73,6 +73,8 @@
 
 # SOAL 3
 
+# in_ = input('In: ')
+in_ = 'Saya beli dua puluh tiga bungkus roti'
 
 
 # numIn = input('In: ')
