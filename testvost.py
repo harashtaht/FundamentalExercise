@@ -101,67 +101,29 @@ in_ = 'Saya beli dua puluh tiga bungkus roti'
 #     return result
 
 wordIn_ = 'Saya beli dua puluh tiga bungkus roti'
-list_ = wordIn_.split(' ')
+list_ = wordIn_.lower().split(' ')
 list_1 = []
 
 # print(list_)
-
-# def separateNum(list):
-#     for i in list:
-
-for i in list_:
-    try:
-        list_1.append(alphabetify(*num_str(i))) 
-    except:
-        list_1.append(i)
+#['Saya', 'beli', 'dua', 'puluh', 'tiga', 'bungkus', 'roti']
 
 
+def numFind(list_):
+    numDict = {'satu':1, 'dua':2, 'tiga':3, 'empat':4, 'lima':5, 'enam':6, 'tujuh':7, 'delapan':8, 'sembilan':9, 'sepuluh':10, 'sebelas':11}
+    for i in list_:
+        try:
+            list_1.append(numDict[i])
+        except:
+            list_1.append(i)
+            
+    list_2 = []
+    puluhDict = {'puluh':10, 'ratus':10**2, 'ribu':10**3, 'puluh ribu':10**4, 'ratus ribu':10**5, 'juta':10**6, 'puluh juta':10**7, 'ratus juta':10**8, 'milyar':10**9}
+    
+    for j in list_1:
+        try:
+            list_2.append(puluhDict[j])
+        except:
+            list_2.append(j)
+    return list_2
 
-# wordIn = input('In: ')
-# list_ = wordIn.split(' ')
-# list_1 = []
-
-# numIn = input('In: ')
-# numIn = numIn.lower()
-# numIn = 'dua puluh tiga'
-# numLs = numIn.split()
-# # print(numLs)
-
-# ### Reference for converting
-# angkaNum = [i for i in range(1, 10)]
-# angkaBet = ['satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan']
-# dictAng = dict(zip(angkaBet, angkaNum))
-# print(dictAng) #{'satu': 1, 'dua': 2, 'tiga': 3, 'empat': 4, 'lima': 5, 'enam': 6, 'tujuh': 7, 'delapan': 8, 'sembilan': 9}
-
-
-# convertingNum = []
-# origin = []
-
-# # for i in numIn.split():
-# for i in numLs:
-#     indexNum = []
-#     if i in dictAng:
-#         convertingNum.append(dictAng[i])
-#         origin.append('index: '+str(numLs.index(i)))
-#     else:
-#         origin.append(i)
-#         # indexNum.append(i.index())
-# print('convertingNum', convertingNum) #convertingNum [2, 3]
-# print('original Sentence', origin) # original Sentence ['index: 0', 'puluh', 'index: 2']
-
-# def find_between(s, start, end):
-#   return (s.split(start))[1].split(end)[0]
-
-# # print(find_between(numIn, 'dua', 'tiga'))
-
-# lsPul = []
-# puluhNum = [10**i for i in range(0, 10)]
-# puluhBet = ['se', 'puluh', 'ratus', 'ribu', 'puluh ribu', 'ratus ribu', 'juta', 'puluh juta', 'ratus juta']
-# dictPul = dict(zip(puluhBet, puluhNum))
-
-# print(dictPul)
-
-
-# buat fungsi untuk split per spasi
-# dictionary angka
-# dikali 10^^ sesuai len(num)
+print(numFind(list_))
