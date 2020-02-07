@@ -106,21 +106,59 @@ list_2 = numFind(list_)
 # list_2 = ['saya', 'beli', 2, 10, 3, 'bungkus', 'roti']
 
 list_Kalimat = []
-num = 0
-for i in range(len(list_2)):
-    
-    if type(list_2[i]) == int:
-        if (list_2[i]%10 ==0):
-            num *= list_2[i]
 
-        elif (list_2[i]%10 !=0):
-            num += list_2[i]
+
+# Testing
+num = 0
+num_ = 0
+
+for i in range(len(list_2)):
+    # print(f'i ={i} \t list_2[i]={list_2[i]} \t {type(list_2[i])}')
+    print('i', i)
+    print('listKalimat', list_Kalimat)
+
+    if type(list_2[i]) == int and type(list_2[i+1]) != str:
+        if (list_2[i]%10 !=0):
+            num_ += list_2[i]
+
+        elif (list_2[i]%10 ==0):
+            num_ *= list_2[i]
+            num = num+num_            
+            num_ *= 0
+
+    elif type(list_2[i]) == int and type(list_2[i+1]) == str:
+        num += list_2[i]
 
     elif type(list_2[i-1]) == int and type(list_2[i] == str):
         list_Kalimat.append(num)
+        list_Kalimat.append(list_2[i])
     
     elif type(list_2[i]) == str:
         list_Kalimat.append(list_2[i])
+
+print(list_Kalimat)
+
+# print(2%2)
+# print(0%2)
+
+
+# Pre-Modification Code
+# num = 0
+# for i in range(len(list_2)):
+#     print(f'i = {i}, num={num}')
+    
+#     if type(list_2[i]) == int:
+#         if (list_2[i]%10 ==0):
+#             num *= list_2[i]
+
+#         elif (list_2[i]%10 !=0):
+#             num += list_2[i]
+
+#     elif type(list_2[i-1]) == int and type(list_2[i] == str):
+#         list_Kalimat.append(num)
+    
+#     elif type(list_2[i]) == str:
+#         list_Kalimat.append(list_2[i])
 
 # print(list_Kalimat)
 # ['saya', 'beli', 23, 'roti']
@@ -137,3 +175,5 @@ def makingSentence(list_Kalimat):
     return print(result.capitalize())
 
 makingSentence(list_Kalimat)
+
+### Benerin condition di LINE 110: 923 jadi 9023 karena ada ratus, ada puluh
