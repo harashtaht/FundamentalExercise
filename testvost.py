@@ -1,88 +1,81 @@
 # SOAL 1
 
-# number = input("In: ")
-# number = int(number)
+number = input("In: ")
+number = int(number)
 
-# l = []
-# # number = 4
-# for i in range(1, number+1, 1):
-#     var1 = [i]*i
-#     l.append(var1)
-# print(l)
+l = []
+# number = 4
+for i in range(1, number+1, 1):
+    var1 = [i]*i
+    l.append(var1)
+print(l)
 
-# bar1 = []
-# for loop in range(len(l)): #range(0,4,1) #0,1,2,3
-#     for loop2 in range(0, loop+1):
-#         bar1.append(l[loop][loop2])
-# for loop in range(-2, -len(l)-1, -1): #0,-1,-2,-3
-#     for loop2 in range(len(l[loop])):
-#         bar1.append(l[loop][loop2])
+bar1 = []
+for loop in range(len(l)): #range(0,4,1) #0,1,2,3
+    for loop2 in range(0, loop+1):
+        bar1.append(l[loop][loop2])
+for loop in range(-2, -len(l)-1, -1): #0,-1,-2,-3
+    for loop2 in range(len(l[loop])):
+        bar1.append(l[loop][loop2])
 
-# j = 0
-# while j < number:
-#     z = ''
-#     for i in bar1:
-#         if i == j or i <j:
-#             z += '#'
-#         elif i != j:
-#             z += str(i)
-#     j += 1
-#     print(z)
+j = 0
+while j < number:
+    z = ''
+    for i in bar1:
+        if i == j or i <j:
+            z += '#'
+        elif i != j:
+            z += str(i)
+    j += 1
+    print(z)
 
 # SOAL 2
 
-# import re
+import re
 
-# def alphabetify(num):
-#     number = ['', ' satu', ' dua', ' tiga', ' empat', ' lima', ' enam', ' tujuh', ' delapan', ' sembilan', ' sepuluh', ' sebelas']
-#     result =""
-#     n = int(num)
-#     if n >= 0 and n <= 11:
-#         result = result + number[n]
-#     elif n < 20:
-#         result = alphabetify(n % 10) + " belas"
-#     elif n < 100:
-#         result = alphabetify(n / 10) + " puluh" + alphabetify(n % 10)
-#     elif n < 200:
-#         result = " Seratus" + alphabetify(n - 100)
-#     elif n < 1000:
-#         result = alphabetify(n / 100) + " ratus" + alphabetify(n %100)
-#     elif n < 2000:
-#         result = " Seribu" + alphabetify(n-1000)
-#     elif n < 1000000:
-#         result = alphabetify(n / 1000) + " ribu" + alphabetify(n % 1000)
-#     elif n < 1000000000:
-#         result = alphabetify(n/1000000) + " juta" + alphabetify(n % 1000000)
-#     else:
-#         result = alphabetify(n / 1000000000) + " milyar" + alphabetify(n % 1000000000)
-#     return result
+def alphabetify(num):
+    number = ['', ' satu', ' dua', ' tiga', ' empat', ' lima', ' enam', ' tujuh', ' delapan', ' sembilan', ' sepuluh', ' sebelas']
+    result =""
+    n = int(num)
+    if n >= 0 and n <= 11:
+        result = result + number[n]
+    elif n < 20:
+        result = alphabetify(n % 10) + " belas"
+    elif n < 100:
+        result = alphabetify(n / 10) + " puluh" + alphabetify(n % 10)
+    elif n < 200:
+        result = " Seratus" + alphabetify(n - 100)
+    elif n < 1000:
+        result = alphabetify(n / 100) + " ratus" + alphabetify(n %100)
+    elif n < 2000:
+        result = " Seribu" + alphabetify(n-1000)
+    elif n < 1000000:
+        result = alphabetify(n / 1000) + " ribu" + alphabetify(n % 1000)
+    elif n < 1000000000:
+        result = alphabetify(n/1000000) + " juta" + alphabetify(n % 1000000)
+    else:
+        result = alphabetify(n / 1000000000) + " milyar" + alphabetify(n % 1000000000)
+    return result
 
-# def num_str(str): 
-#     array = re.findall(r'[0-9]+', str) 
-#     return array 
+def num_str(str): 
+    array = re.findall(r'[0-9]+', str) 
+    return array 
 
-# wordIn = input('In: ')
-# list_ = wordIn.split(' ')
-# list_1 = []
+wordIn = input('In: ')
+list_ = wordIn.split(' ')
+list_1 = []
 
-# for i in list_:
-#     try:
-#         list_1.append(alphabetify(*num_str(i))) 
-#     except:
-#         list_1.append(i)
+for i in list_:
+    try:
+        list_1.append(alphabetify(*num_str(i))) 
+    except:
+        list_1.append(i)
 
 # SOAL 3
 
-# in_ = input('In: ')
-in_ = 'Saya beli dua puluh tiga bungkus roti'
-
-wordIn_ = 'Saya beli sembilan ratus dua puluh tiga bungkus roti'
+wordIn_ = input('In: ')
 list_ = wordIn_.lower().split(' ')
 list_1 = []
-
-# print(list_)
-#['Saya', 'beli', 'dua', 'puluh', 'tiga', 'bungkus', 'roti']
-
 
 def numFind(list_):
     numDict = {'satu':1, 'dua':2, 'tiga':3, 'empat':4, 'lima':5, 'enam':6, 'tujuh':7, 'delapan':8, 'sembilan':9, 'sepuluh':10, 'sebelas':11}
@@ -103,20 +96,12 @@ def numFind(list_):
     return list_2
 
 list_2 = numFind(list_)
-# list_2 = ['saya', 'beli', 2, 10, 3, 'bungkus', 'roti']
 
 list_Kalimat = []
 
-
-# Testing
 num = 0
 num_ = 0
-
 for i in range(len(list_2)):
-    # print(f'i ={i} \t list_2[i]={list_2[i]} \t {type(list_2[i])}')
-    print('i', i)
-    print('listKalimat', list_Kalimat)
-
     if type(list_2[i]) == int and type(list_2[i+1]) != str:
         if (list_2[i]%10 !=0):
             num_ += list_2[i]
@@ -136,33 +121,6 @@ for i in range(len(list_2)):
     elif type(list_2[i]) == str:
         list_Kalimat.append(list_2[i])
 
-print(list_Kalimat)
-
-# print(2%2)
-# print(0%2)
-
-
-# Pre-Modification Code
-# num = 0
-# for i in range(len(list_2)):
-#     print(f'i = {i}, num={num}')
-    
-#     if type(list_2[i]) == int:
-#         if (list_2[i]%10 ==0):
-#             num *= list_2[i]
-
-#         elif (list_2[i]%10 !=0):
-#             num += list_2[i]
-
-#     elif type(list_2[i-1]) == int and type(list_2[i] == str):
-#         list_Kalimat.append(num)
-    
-#     elif type(list_2[i]) == str:
-#         list_Kalimat.append(list_2[i])
-
-# print(list_Kalimat)
-# ['saya', 'beli', 23, 'roti']
-
 def makingSentence(list_Kalimat):
     result = ''
     for i in list_Kalimat:
@@ -175,5 +133,3 @@ def makingSentence(list_Kalimat):
     return print(result.capitalize())
 
 makingSentence(list_Kalimat)
-
-### Benerin condition di LINE 110: 923 jadi 9023 karena ada ratus, ada puluh
