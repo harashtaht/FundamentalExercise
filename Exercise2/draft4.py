@@ -30,6 +30,7 @@ print(float(2.66))
 # print(6%3)
 print(9%3)
 
+
 # A : 281
 # B : 9155
 # K : 91
