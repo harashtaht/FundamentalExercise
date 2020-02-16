@@ -10,14 +10,25 @@
 #     for i in range(A, B+1, 1):
 #         if i%K == 0:
 #             results +=1
-#             print(i, results)
+#             print('i = ', i, 'results =', results)
 #         else:
 #             continue
 
+# print('results = ',results)
 
+results = 0
+for i in range(1,11,1):
+    print(f'for number = {i} results= {i/3} type= {type(i/3)}')
+    if (i/3).is_integer():
+        results += 1
+        print(i/3, (i/3).is_integer())
+    else:
+        results += 0
+
+print(float(2.66))
 # print(3%3)
 # print(6%3)
-# print(9%3)
+print(9%3)
 
 # A : 281
 # B : 9155
@@ -53,15 +64,15 @@
 # 7553 80
 
 
-print(6734%91)
-print(6735%91)
-print(6736%91)
-print(6825%91)
-print(6916%91)
-print(7007%91)
-print(7098%91)
-print(7189%91)
-print(7280%91)
-print(7371%91)
-print(7462%91)
-print(7553%91)
+# print(6734%91)
+# print(6735%91)
+# print(6736%91)
+# print(6825%91)
+# print(6916%91)
+# print(7007%91)
+# print(7098%91)
+# print(7189%91)
+# print(7280%91)
+# print(7371%91)
+# print(7462%91)
+# print(7553%91)
