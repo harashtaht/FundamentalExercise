@@ -6,14 +6,20 @@ T = []
 for i in f:
     T.append(int(i))
 
-ABK_ = T[1:]
-# ABK_.append(T[1:])
-T = T[0]
+# ABK_ = T[1:]
+# # ABK_.append(T[1:])
+# T = T[0]
 
+for number in T:
+    if T[0]>=1 and T[0]<=100:
+        # ABK_ = T[1:]
+        T = T[0]
+        continue
+    else:
+        break
 
 print(T)
-print(type(T))
-print(ABK_)
+
 # print(T) #list of input
 # print(type(T[0])) #int
 # print(len(T)) #301
