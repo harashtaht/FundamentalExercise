@@ -59,3 +59,35 @@ LIMIT 3;
 -- WHERE o.status = 2;
 
 
+#### No 2
+
+CREATE TABLE event_log
+(
+	user_id INT NOT NULL,
+    event_date_time INT NOT NULL
+    );
+    
+SHOW TABLES;
+SELECT * FROM event_log;
+
+INSERT INTO event_log (user_id, event_date_time) VALUES
+(7494212, 1535308430),
+(7494212, 1535308433),
+(1475185, 1535308444),
+(6946725, 1535308475),
+(6946725, 1535308476),
+(6946725, 1535308477);
+
+### No 2
+
+SELECT 
+    user_id, COUNT(event_date_time) AS times_inserted
+FROM
+    event_log    
+GROUP BY user_id
+HAVING COUNT(event_date_time) < 3 AND COUNT(event_date_time)>=1;
+
+
+-- WHERE 2000< x <4000;
+
+
