@@ -36,7 +36,20 @@ INSERT INTO books (sold_copies, book_name) VALUES
 
 
 SELECT author_name, sold_copies FROM authors a
+LEFT JOIN books b on a.book_name = b.book_name
+ORDER BY sold_copies ASC;
+
+SELECT author_name, SUM(sold_copies) FROM authors a
 LEFT JOIN books b on a.book_name = b.book_name;
+
+
+### Answer No 1 
+
+SELECT author_name, SUM(sold_copies) as total_sold FROM authors a
+LEFT JOIN books b on a.book_name = b.book_name
+GROUP BY author_name
+ORDER BY total_sold ASC
+LIMIT 3;
 
 ## SUM sold books based on author, order by minimum
 
