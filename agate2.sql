@@ -45,8 +45,8 @@ LEFT JOIN books b on a.book_name = b.book_name;
 ### 1.	Create an SQL query that shows the TOP 3 authors who sold the least books in total.
 ### Answer No 1 
 
-SELECT author_name, SUM(sold_copies) as total_sold FROM authors a
-LEFT JOIN books b on a.book_name = b.book_name
+SELECT author_name, SUM(sold_copies) as total_sold FROM agate_authors a
+LEFT JOIN agate_books b on a.book_name = b.book_name
 GROUP BY author_name
 ORDER BY total_sold ASC
 LIMIT 3;
@@ -88,12 +88,12 @@ SELECT * FROM event_log;
 -- 
 
 SELECT 
-    COUNT(user_id)
+    COUNT(user_id) AS no_of_unique_users
 FROM
     (SELECT 
         user_id, COUNT(event_date_time) AS times_inserted
     FROM
-        event_log
+        agate_event_log
     GROUP BY user_id
     HAVING (COUNT(event_date_time) < 3
         AND COUNT(event_date_time) >= 1)) AS T;
@@ -156,9 +156,9 @@ SELECT
     department_name,
     CAST(AVG(salary) AS DECIMAL (10 , 2 )) AS average_sal
 FROM
-    employees e
+    agate_employees e
         LEFT JOIN
-    salaries s ON e.employee_id = s.employee_id
+    agate_salaries s ON e.employee_id = s.employee_id
 GROUP BY department_name
 HAVING (average_sal > 500)
 ORDER BY average_sal DESC;
@@ -173,8 +173,8 @@ FROM
         department_name,
             CAST(AVG(salary) AS DECIMAL (10 , 2 )) AS average_sal
     FROM
-        employees e
-    LEFT JOIN salaries s ON e.employee_id = s.employee_id
+        agate_employees e
+    LEFT JOIN agate_salaries s ON e.employee_id = s.employee_id
     GROUP BY department_name
     HAVING (average_sal > 500)) AS T
     ORDER BY average_sal;
@@ -225,7 +225,10 @@ SELECT * from agate_deposito;
 
 #### Answer No 4
 
-SELECT d.deposito_id, d.amount,  p.person_id, p.name AS person_name from agate_person p
-LEFT JOIN agate_deposito d
-ON d.person_id = p.person_id
+SELECT 
+    d.deposito_id, d.amount, p.person_id, p.name AS person_name
+FROM
+    agate_person p
+        LEFT JOIN
+    agate_deposito d ON d.person_id = p.person_id
 ORDER BY person_id;
