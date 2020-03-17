@@ -80,14 +80,34 @@ INSERT INTO event_log (user_id, event_date_time) VALUES
 
 ### No 2
 
-SELECT 
+-- SELECT COUNT(*) FROM event_log
+-- WHERE user_id IN
+(SELECT 
     user_id, COUNT(event_date_time) AS times_inserted
 FROM
     event_log    
 GROUP BY user_id
-HAVING COUNT(event_date_time) < 3 AND COUNT(event_date_time)>=1;
+HAVING COUNT(event_date_time) < 3 AND COUNT(event_date_time)>=1);
 
 
--- WHERE 2000< x <4000;
+select count(*)from event_log
+group by user_id;
+
+SELECT COUNT(user_id), COUNT(event_date_time)
+FROM event_log
+GROUP BY user_id
+HAVING COUNT(event_date_time) <3;
+
+
+SELECT COUNT(DISTINCT user_id)
+FROM event_log
+WHERE count(event_date_time)<3;
+
+-- WHERE 2000< x <4000; --> REAL CONDITION
+
+-- select count(*), Education from employeeattrition 
+-- where MonthlyIncome > (select max(MonthlyIncome) from employeeattrition
+-- WHERE Education=3)
+-- GROUP by EducationField;
 
 
