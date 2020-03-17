@@ -90,6 +90,17 @@ GROUP BY user_id
 HAVING COUNT(event_date_time) < 3 AND COUNT(event_date_time)>=1);
 
 
+select cc, cat_name, name from (
+   SELECT count(deals.id) as cc, cat.name as cat_name, deals.name as name 
+   FROM ddd_categories as cat
+   JOIN ddd_deals as deals on deals.category_id=cat.id
+   GROUP BY deals.id
+)
+ORDER BY xxx;
+
+
+
+
 select count(*)from event_log
 group by user_id;
 
