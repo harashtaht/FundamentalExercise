@@ -10,7 +10,6 @@ CREATE TABLE authors
     book_name VARCHAR(255) NOT NULL
     );
     
-    
 CREATE TABLE books
 (
 	book_name VARCHAR(255) NOT NULL,
@@ -42,7 +41,8 @@ ORDER BY sold_copies ASC;
 SELECT author_name, SUM(sold_copies) FROM authors a
 LEFT JOIN books b on a.book_name = b.book_name;
 
-
+#######################
+### 1.	Create an SQL query that shows the TOP 3 authors who sold the least books in total.
 ### Answer No 1 
 
 SELECT author_name, SUM(sold_copies) as total_sold FROM authors a
@@ -51,15 +51,10 @@ GROUP BY author_name
 ORDER BY total_sold ASC
 LIMIT 3;
 
-## SUM sold books based on author, order by minimum
 
-
--- SELECT u.id, u.name, u.email, u.phone FROM ku_user u
--- RIGHT JOIN ku_order o on o.user_id = u.id
--- WHERE o.status = 2;
-
-
-#### No 2
+######################
+#### 2. Write an SQL query to find out how many users inserted more than 2000 
+#### but less than 4000 images in their presentations!
 
 CREATE TABLE event_log
 (
@@ -78,47 +73,33 @@ INSERT INTO event_log (user_id, event_date_time) VALUES
 (6946725, 1535308476),
 (6946725, 1535308477);
 
-### No 2
+SELECT * FROM event_log;
 
--- SELECT COUNT(*) FROM event_log
--- WHERE user_id IN
-(SELECT 
-    user_id, COUNT(event_date_time) AS times_inserted
+### Answer No 2
+
+-- 
+-- (SELECT 
+--         user_id, COUNT(event_date_time) AS times_inserted
+--     FROM
+--         event_log
+--     GROUP BY user_id
+--     HAVING (COUNT(event_date_time) < 3
+--         AND COUNT(event_date_time) >= 1));
+-- 
+
+SELECT 
+    COUNT(user_id)
 FROM
-    event_log    
-GROUP BY user_id
-HAVING COUNT(event_date_time) < 3 AND COUNT(event_date_time)>=1);
+    (SELECT 
+        user_id, COUNT(event_date_time) AS times_inserted
+    FROM
+        event_log
+    GROUP BY user_id
+    HAVING (COUNT(event_date_time) < 3
+        AND COUNT(event_date_time) >= 1)) AS T;
+
+--  2000< x <4000; --> REAL CONDITION
 
 
-select cc, cat_name, name from (
-   SELECT count(deals.id) as cc, cat.name as cat_name, deals.name as name 
-   FROM ddd_categories as cat
-   JOIN ddd_deals as deals on deals.category_id=cat.id
-   GROUP BY deals.id
-)
-ORDER BY xxx;
-
-
-
-
-select count(*)from event_log
-group by user_id;
-
-SELECT COUNT(user_id), COUNT(event_date_time)
-FROM event_log
-GROUP BY user_id
-HAVING COUNT(event_date_time) <3;
-
-
-SELECT COUNT(DISTINCT user_id)
-FROM event_log
-WHERE count(event_date_time)<3;
-
--- WHERE 2000< x <4000; --> REAL CONDITION
-
--- select count(*), Education from employeeattrition 
--- where MonthlyIncome > (select max(MonthlyIncome) from employeeattrition
--- WHERE Education=3)
--- GROUP by EducationField;
-
-
+######################
+#### 3. 
