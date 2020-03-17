@@ -186,4 +186,46 @@ FROM
 #### 4.	Create SQL Query that show Person Data with each their Deposito Amount. 
 #### 	Data sorted by PERSON_ID.
 
+CREATE TABLE agate_person
+(
+	person_id INT NOT NULL PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(255)
+);
 
+CREATE TABLE agate_deposito
+(
+	deposito_id INT NOT NULL PRIMARY KEY,
+    amount INT,
+    person_id INT,
+    FOREIGN KEY (person_id) REFERENCES agate_person(person_id)
+    );
+
+
+INSERT INTO agate_person (person_id, name, email)
+VALUES
+(1, "Stella", "stella@gmail.com"),
+(2, "Yudhit", "Yudhit_123@yahoo.com"),
+(3, "Christian", "chris@yahoo.com");
+
+SELECT * from agate_person;
+
+INSERT INTO agate_deposito (deposito_id, amount, person_id)
+VALUES
+(1000, 10000000, 1),
+(1001, 15000000, 3),
+(1002, 11000000, 2),
+(1003, 20000000, 1),
+(1004, 25000000, 2),
+(1005, 10000000, 3),
+(1006, 12000000, 2);
+
+SELECT * from agate_deposito;
+
+
+#### Answer No 4
+
+SELECT d.deposito_id, d.amount,  p.person_id, p.name AS person_name from agate_person p
+LEFT JOIN agate_deposito d
+ON d.person_id = p.person_id
+ORDER BY person_id;
