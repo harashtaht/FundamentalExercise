@@ -23,15 +23,10 @@ class Note:
         Search is case sensitive and matches both text and tags.'''
         return filter in self.memo or filter in self.tags
 
-from notebook import Note
+# from notebook import Note
 
-n1 = Note("hello first")
-n2 = Note("hello again")
+# n1 = Note("hello first")
+# n2 = Note("hello again")
 
-print(n1.id)
-print(n1.match('hello'))
-print(n2.id)
-print(n2.match('again'))
-# print(n1.match('wow'))
-
-
+# print(n1.id)
+# print(n2.id)
