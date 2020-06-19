@@ -1,5 +1,13 @@
 # Tutorial 4 : Creating Subclasses
 
+'''
+.isinstance(instance, class)
+This method returns the boolean value of whether an instance belongs to a class
+
+.issubclass(subclass, class)
+This method returns the boolean value of whether a class has inherited from the second class.
+'''
+
 class Employee:
     raise_amt = 1.04 #class variable
 
@@ -44,14 +52,30 @@ class Manager(Employee):
 
     def print_emps(self):
         for emp in self.employees:
-            print('-->', emp.fullname)
+            print('-->', emp.fullname())
 
 
 dev_1 = Developer('Corey', 'Schafer', 50000, 'Python')
 dev_2 = Developer('Test', 'Employee', 60000, 'Java')
 
-print(dev_1.email)
-print(dev_1.prog_lang)
+mgr_1 = Manager('Sue', 'Smith', 90000, [dev_1])
+
+# print(mgr_1.email)
+
+mgr_1.add_emp(dev_2)
+mgr_1.remove_emp(dev_1)
+# mgr_1.print_emps()
+
+print(isinstance(mgr_1, Manager))
+print(isinstance(mgr_1, Employee))
+print(isinstance(mgr_1, Developer))
+
+print(issubclass(Manager, Employee))
+print(issubclass(Manager, Developer))
+
+
+# print(dev_1.email)
+# print(dev_1.prog_lang)
 
 
 # print(dev_1.pay)
