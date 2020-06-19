@@ -190,3 +190,34 @@ class Fish(Pet):
 # # Person.number_of_people = 8
 # print(Person.number_of_people)
 
+# -- ## Class Method??
+class Person:
+    number_of_people = 0
+    GRAVITY = -9.8
+
+    def __init__(self, name):
+        self.name = name
+        Person.add_person()
+    
+    @classmethod # Decorator
+    def number_of_people_(cls):
+        return cls.number_of_people
+
+    @classmethod
+    def add_person(cls):
+        cls.number_of_people += 1
+
+p1 = Person("tim")
+p2 = Person("jill")
+
+# print(Person.number_of_people_)
+
+## -- Part 5 : Class Attributes --
+
+class Math:
+
+    @staticmethod
+    def add5(x):
+        return x + 5
+
+print(Math.add5(4))
