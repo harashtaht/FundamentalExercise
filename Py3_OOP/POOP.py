@@ -1,5 +1,5 @@
 # Object Orientated Programming in Python
-# Part 1
+# -- Part 1 --
 
 def hello():
     print("hello")
@@ -63,7 +63,7 @@ d2 = Dog("Bill", 6)
 # d.set_age(14)
 # print(d.get_age())
 
-# Part 2
+# -- Part 2 -- 
 
 class Student:
     def __init__(self, name, age, grade):
@@ -88,6 +88,24 @@ class Course:
         return False
 
     def get_average_grade(self):
-        pass
+        value = 0
+        for student in self.students:
+            value += student.get_grade()
 
+        return value / len(self.students)
+
+s1 = Student("Tim", 19, 95)
+s2 = Student("Bill", 19, 75)
+s3 = Student("Jill", 19, 65)
+
+course = Course("Science", 2)
+course.add_student(s1)
+course.add_student(s2)
+# print(course.students[0].name)
+# print(course.add_student(s3))
+
+# print(course.get_average_grade())
+
+
+## -- Part 3 : Inheritance -- ##
 
