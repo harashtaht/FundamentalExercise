@@ -220,4 +220,5 @@ class Math:
     def add5(x):
         return x + 5
 
-print(Math.add5(4))
+# print(Math.add5(4))
+# print(__name__)
