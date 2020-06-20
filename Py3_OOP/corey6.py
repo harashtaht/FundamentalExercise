@@ -30,8 +30,12 @@ emp_1 = Employee('John', 'Smith')
 
 emp_1.fullname = 'Corey Schafer'
 
-print(emp_1.first)
-print(emp_1.email)
-print(emp_1.fullname)
+# print(emp_1.first)
+# print(emp_1.email)
+# print(emp_1.fullname)
 
-del emp_1.fullname
+# del emp_1.fullname
+
+print(13//2)
+print(13/2)
+# print(110%3)
