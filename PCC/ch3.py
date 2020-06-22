@@ -12,7 +12,47 @@ bicycles = ['trek', 'cannondale', 'redline', 'specialized']
 # print(bicycles[-1].title())
 
 motorcycles = ['honda', 'yamaha', 'suzuki']
+# print(motorcycles)
+
+# motorcycles[0] = 'ducati'
+# motorcycles.append('ducati')
+app = 'ducati'
+app2 = 'vario'
+motorcycles.append(app.title())
+motorcycles.append(app2.upper())
+# print(motorcycles)
+
+# -- Inserting Elements into List
+
+# print(motorcycles)
+motorcycles.insert(0, 'harley davidson'.title())
+motorcycles.insert(3, 'satria')
+# print(motorcycles)
+
+# del motorcycles[-1]
+# print(motorcycles)
+
+'''
+The pop() method removes the last item in a list,
+but it lets you work with that item after removing it.
+The term pop comes from thinking of a list as a stack of items and popping
+one item off the top of the stack.
+In this analogy, the top of a stack corresponds to the end of a list.
+'''
+# print(motorcycles)
+# print(motorcycles.pop())
+# print(motorcycles)
+popped_motorcycles = motorcycles.pop()
+# print(popped_motorcycles)
+
+'''If you only know the value of the item you want to remove,
+you can use remove() method'''
+
+# motorcycles.remove('suzuki')
 print(motorcycles)
 
-motorcycles[0] = 'ducati'
+too_expensive = 'ducati'
 print(motorcycles)
+print('\nA ' + too_expensive.title() + " is too expensive for my lame ass.")
+
+# Do the exercise on page 79 of 562
