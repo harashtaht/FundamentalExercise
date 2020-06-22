@@ -49,10 +49,59 @@ popped_motorcycles = motorcycles.pop()
 you can use remove() method'''
 
 # motorcycles.remove('suzuki')
-print(motorcycles)
+# print(motorcycles)
 
 too_expensive = 'ducati'
-print(motorcycles)
-print('\nA ' + too_expensive.title() + " is too expensive for my lame ass.")
+# print(motorcycles)
+# print('\nA ' + too_expensive.title() + " is too expensive for my lame ass.")
 
 # Do the exercise on page 79 of 562
+
+# 
+# *** Organizing a List ***
+
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+# cars.sort()
+# print(cars)
+
+# cars.sort(reverse=True)
+# print(cars)
+
+for i in range(len(cars)):
+    cars[i] = cars[i].title()
+    # print(cars[i])
+# print(cars)
+
+'''
+To maintain the original order of a list but present it in a sorted order,
+you can use the sorted() function.
+The sorted() function lets you display your list in a particular
+order but doesn't affect the actual order of the list.
+'''
+
+# print('This is the original list:\n', cars)
+
+# print('Here is the sorted list:\n', sorted(cars))
+# # cars.sort()
+# # print('Here is the sorted list:\n', cars)
+
+# print('Here is the original list again:\n', cars)
+
+# print(cars)
+# cars.reverse()
+# print(cars)
+
+# // Exercise 3-8
+locs = ['shinjuku', 'new zealand', 'brooklyn', 'amsterdam', 'manchester']
+# print(locs)
+
+# print(sorted(locs))
+
+# print(locs)
+
+# print(sorted(locs, reverse=True))
+
+# locs.reverse()
+# print(locs)
+# locs.reverse()
+# print(locs)
