@@ -44,7 +44,7 @@ requested_topping = ['mushrooms', 'onions', 'pineapple']
 #     else:
 #         print("shut the fuck up, " + i.title() + ". You're motherfucking banned, you bitch.")
 
-age = int(input("What's your age? "))
+# age = int(input("What's your age? "))
 
 # if age < 4:
 #     print(f"The fee is free for a {age} years old. Enjoy!")
@@ -53,11 +53,45 @@ age = int(input("What's your age? "))
 # else:
 #     print(f"The fee will be 10$ for a {age} years old.")
 
-if age <4:
-    price = 0
-elif age <18:
-    price = 5
-else:
-    price = 10
+# if age <4:
+#     price = 0
+# elif age <18:
+#     price = 5
+# else:
+#     price = 10
 
-print(f"Your admission cost is $ {price}")
+# print(f"Your admission cost is $ {price}")
+
+# requested_topping = ['mushrooms', 'extra cheese']
+
+# if 'mushrooms' in requested_topping:
+#     print('Adding mushrooms.')
+# if 'pepperoni' in requested_topping:
+#     print('Adding pepperoni.')
+# if 'extra cheese' in requested_topping:
+#     print('Adding extra cheese.')
+
+# print('\n Finished making your pizza! Enjoy.')
+
+
+# requested_topping = []
+
+# cond = input("Would you like to request toppings? [Y/N]").lower()
+
+
+# if cond == 'y':
+#     tops = input("What would it be? ")
+#     requested_topping.append(tops)
+#     cond2 = input("Anything else? [Y/N] ").lower()
+#     if cond2 == 'y':
+#         tops2 = input("What else, sir? ")
+#         requested_topping.append(tops2)
+#         cond2 = input("Anything else? [Y/N] ").lower()
+
+# elif cond =='n':
+#     print("Please wait...")
+
+# for i in requested_topping:
+#     print(f"Adding {i}.")
+
+# print("Finished making your pizza!")
