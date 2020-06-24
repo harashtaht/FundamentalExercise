@@ -35,11 +35,29 @@ requested_topping = ['mushrooms', 'onions', 'pineapple']
 
 # print('mushrooms' in requested_topping)
 
-banned_users = ['andrew', 'carolina', 'david']
-user = ['marie', 'andrew']
+# banned_users = ['andrew', 'carolina', 'david']
+# user = ['marie', 'andrew']
 
-for i in user:
-    if i not in banned_users:
-        print(i.title()+", you can post a response if you wish")
-    else:
-        print("shut the fuck up, " + i.title() + ". You're motherfucking banned, you bitch.")
+# for i in user:
+#     if i not in banned_users:
+#         print(i.title()+", you can post a response if you wish")
+#     else:
+#         print("shut the fuck up, " + i.title() + ". You're motherfucking banned, you bitch.")
+
+age = int(input("What's your age? "))
+
+# if age < 4:
+#     print(f"The fee is free for a {age} years old. Enjoy!")
+# elif 4 <= age < 18:
+#     print(f"For a {age} years old, the fee for an entry will be 5$.")
+# else:
+#     print(f"The fee will be 10$ for a {age} years old.")
+
+if age <4:
+    price = 0
+elif age <18:
+    price = 5
+else:
+    price = 10
+
+print(f"Your admission cost is $ {price}")
