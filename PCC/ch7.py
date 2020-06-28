@@ -25,3 +25,14 @@ When you use the input() function, Python interprets everything the user enters 
 #     print("\nYou're tall enough to ride!")
 # else:
 #     print("\nYou'll be able to ride when you're a little older.")
+
+
+# -- Introducing while Loops
+
+prompt = "\nTell me something, and I will repeat it back to you:"
+prompt += "\nEnter 'quit' to end the program.\n"
+
+message = ""
+while message != 'quit':
+    message = input(prompt)
+    print(message)
