@@ -45,3 +45,30 @@ del alien_0['points']
 
 # -- Looping Through Dictionary
 
+user_0 = {
+    'username' : 'efermi',
+    'first' : 'enrico',
+    'last' : 'fermi'
+}
+
+# for key, value in user_0.items():
+#     print("\nKey: " + key)
+#     print("Value: " + value)
+
+'''
+Notice that the key-value pairs are not returned in order in which they were stored,
+even when looping through a dictionary.
+Python doesn't care about the order in which the key-value pairs are stored;
+it tracks only the connections between them.
+'''
+
+favorite_language = {
+    'jen' : 'python',
+    'sarah' : 'c',
+    'edward' : 'ruby',
+    'phil' : 'python'
+}
+
+# for name, language in favorite_language.items():
+#     print(name.title() + "'s favorite language is " + 
+#     language.title() + ".")
