@@ -82,11 +82,67 @@ favorite_language = {
 #         ", I see your favorite language is " +
 #         favorite_language[name].title() + "!")
 
-# Not in order.
-for name in favorite_language.keys():
-    print(name.title() + ", thank you for taking the poll.")
 
-print("\n")
-# Printed in order.
-for name in sorted(favorite_language.keys()):
-    print(name.title() + ", thank you for taking the poll.")
+# # Not in order.
+# for name in favorite_language.keys():
+#     print(name.title() + ", thank you for taking the poll.")
+
+# print("\n")
+# # Printed in order.
+# for name in sorted(favorite_language.keys()):
+#     print(name.title() + ", thank you for taking the poll.")
+
+
+# print("The following languages have been mentioned in database:")
+# for language in set(favorite_language.values()):
+#     print(language.title())
+
+'''
+Sometimes you’ll want to store a set of dictionaries in a list or a list of items as a value in a dictionary. 
+This is called nesting. You can nest a set
+of dictionaries inside a list, a list of items inside a dictionary, 
+or even a dictionary inside another dictionary. Nesting is a powerful feature, as the following examples will demonstrate.
+'''
+
+alien_0 = {'color' : 'green', 'points' : 5}
+alien_1 = {'color' : 'yellow', 'points' : 10}
+alien_2 = {'color' : 'red', 'points' : 15}
+
+aliens = [alien_0, alien_1, alien_2]
+
+# for alien in aliens:
+#     print(alien)
+
+
+# Make an empty list for storing aliens
+aliens = []
+
+# Make 30 green aliens.
+for alien_number in range(30):
+    new_alien = {'color' : 'green', 'points' : 5}
+    aliens.append(new_alien)
+
+# Show the first 5 aliens
+# for alien in aliens[:5]:
+#     print(alien)
+# print(".....")
+
+# Show how many aliens have been created.
+# print("Total number of aliens: " + str(len(aliens)))
+
+users = {
+    'aeinstein': {
+        'first': 'albert',
+        'last': 'einstein',
+        'location': 'princeton',
+        },
+    'mcurie' : {
+        'first': 'marie',
+        'last' : 'curie',
+        'location' : 'paris',
+    },
+}
+
+# for keys in users.keys():
+#     print(keys)
+#     print(f"\nValues: {users[keys]}")
