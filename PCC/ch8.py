@@ -141,5 +141,24 @@ def show_completed_models(completed_models):
 unprinted_designs = ['iphone case', 'robot pendadnt', 'dodecahedron']
 completed_models = []
 
-print_models(unprinted_designs, completed_models)
-show_completed_models(completed_models)
+# print_models(unprinted_designs, completed_models)
+# show_completed_models(completed_models)
+
+
+# - Passing an Arbitrary Number of Arguments - #
+
+def make_pizza(*toppings):
+    '''Print the list of toppings that have been requested.'''
+    print(toppings)
+
+'''
+The asterisk in the parameter name *toppings tells Python
+to make an empty tuple called toppings and pack
+whatever values it receives into this tuple
+'''
+
+# make_pizza('pepperoni')
+# make_pizza('mushrooms', 'green peppers', 'extra cheese')
+
+tup1 = ('a', 'b', 'c')
+# print(tup1[0])
