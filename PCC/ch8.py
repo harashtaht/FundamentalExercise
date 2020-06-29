@@ -199,3 +199,24 @@ An import statement tells Python to make the code in a module available
 in the currently running program file.
 '''
 
+
+# from pizza import make_pizza as mp
+
+# mp(16, 'pepperoni')
+
+
+'''You can tell Python to import every function in a module
+by using the asterisk (*) operator'''
+
+# example
+from pizza import *
+
+'''
+The asterisk in the import statement tells Python to copy
+every function from the module pizza
+into this program file.
+However, it's best not to use this approach when you're
+working with larger modules that you didn't write:
+if the module has a function name that matches an existing name
+in your project, you can get some unexpected results.
+'''
