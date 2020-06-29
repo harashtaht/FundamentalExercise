@@ -100,10 +100,38 @@ my_new_car = Car('audi', 'a4', 2016)
 # my_new_car.update_odometer(20)
 
 my_used_car = Car('subaru', 'outback', 2013)
-print(my_used_car.get_descriptive_name())
+# print(my_used_car.get_descriptive_name())
 
-my_used_car.update_odometer(23500)
-my_used_car.read_odometer()
+# my_used_car.update_odometer(23500)
+# my_used_car.read_odometer()
 
-my_used_car.increment_odometer(100)
-my_used_car.read_odometer()
+# my_used_car.increment_odometer(100)
+# my_used_car.read_odometer()
+
+
+# -- Inheritance -- #
+
+'''
+If the class written is a specialized version of another class that had been written,
+we can use inheritance. When one class inherits from another, 
+it automatically takes on all the attributes and methods of the first class.
+The original class is called parent class,
+and the new class is called child class.
+'''
+
+class ElectricCar(Car):
+    def __init__(self, make, model, year):
+        super().__init__(make, model, year)
+
+my_tesla = ElectricCar('tesla', 'model s', 2016)
+# print(my_tesla.get_descriptive_name())
+# my_tesla.increment_odometer(20020)
+# my_tesla.read_odometer()
+
+'''
+The super() function is a special function that helps Python make connections between the parent and child class.
+This line tells Python to call the __init__() method from child car's parent class,
+giving ElectricCar instance all the attributes of its parent class.
+The name super comes from a convention of calling the parent class a superclass,
+and child class a subclass.
+'''
