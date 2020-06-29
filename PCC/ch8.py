@@ -172,3 +172,30 @@ def make_pizza(size, *toppings):
 # make_pizza(16, 'pepperoni')
 # make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
+
+def build_profile(first, last, **user_info):
+    profile = {}
+    profile['first_name'] = first
+    profile['last_name'] = last
+    for key, value in user_info.items():
+        profile[key] = value
+        return profile
+
+user_profile = build_profile(
+    'albert', 'einstein', 
+    location = 'princeton',
+    field = 'physics'
+)
+
+# print(user_profile)
+
+
+'''
+One advantage of functions is the way they separate 
+the blocks of code from your main program.
+You can store your functions in a separate file called a module
+and then importing that module into your main program.
+An import statement tells Python to make the code in a module available 
+in the currently running program file.
+'''
+
