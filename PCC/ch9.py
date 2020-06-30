@@ -135,3 +135,28 @@ giving ElectricCar instance all the attributes of its parent class.
 The name super comes from a convention of calling the parent class a superclass,
 and child class a subclass.
 '''
+
+
+class ElectricCar(Car):
+    '''Represent aspects of a car, specific to electric vehicles.'''
+
+    def __init__(self, make, model, year):
+        '''
+        Initialize attributes of the parent class.
+        Then initialize attributes specific to an electric car.
+        '''
+        super().__init__(make, model, year)
+        self.battery_size = 70
+
+    def describe_battery(self):
+        # Print statement describing the battery size.
+        print(f"This car has a {str(self.battery_size)}-kWh battery.")
+
+    def initialize_battery(self, battery_size_in):
+        self.battery_size = battery_size_in
+
+my_tesla = ElectricCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()
+my_tesla.initialize_battery(120)
+my_tesla.describe_battery()
