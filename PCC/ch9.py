@@ -68,31 +68,31 @@ my_new_car = Car('audi', 'a4', 2016)
 # my_new_car.read_odometer()
 
 # MAV - through a method
-class Car():
+# class Car():
 
-    def __init__(self, make, model, year):
-        self.make = make
-        self.model = model
-        self.year = year
-        self.odometer_reading = 1
+#     def __init__(self, make, model, year):
+#         self.make = make
+#         self.model = model
+#         self.year = year
+#         self.odometer_reading = 1
 
-    def get_descriptive_name(self):
-        long_name = f"{str(self.year)} {self.make} {self.model}"
-        return long_name.title()
+#     def get_descriptive_name(self):
+#         long_name = f"{str(self.year)} {self.make} {self.model}"
+#         return long_name.title()
 
-    def read_odometer(self):
-        print(f"This car has {str(self.odometer_reading)} miles on it.")
+#     def read_odometer(self):
+#         print(f"This car has {str(self.odometer_reading)} miles on it.")
     
-    def update_odometer(self, mileage):
-        if mileage >= self.odometer_reading:
-            self.odometer_reading = mileage
-        else:
-            print("You can't roll back an odometer!")
+#     def update_odometer(self, mileage):
+#         if mileage >= self.odometer_reading:
+#             self.odometer_reading = mileage
+#         else:
+#             print("You can't roll back an odometer!")
 
-    def increment_odometer(self, miles):
-        self.odometer_reading += miles
+#     def increment_odometer(self, miles):
+#         self.odometer_reading += miles
 
-my_new_car = Car('audi', 'a4', 2016)
+# my_new_car = Car('audi', 'a4', 2016)
 
 # my_new_car.read_odometer()
 # my_new_car.update_odometer(23)
@@ -137,26 +137,43 @@ and child class a subclass.
 '''
 
 
-class ElectricCar(Car):
-    '''Represent aspects of a car, specific to electric vehicles.'''
+# class ElectricCar(Car):
+#     '''Represent aspects of a car, specific to electric vehicles.'''
 
-    def __init__(self, make, model, year):
-        '''
-        Initialize attributes of the parent class.
-        Then initialize attributes specific to an electric car.
-        '''
-        super().__init__(make, model, year)
-        self.battery_size = 70
+#     def __init__(self, make, model, year):
+#         '''
+#         Initialize attributes of the parent class.
+#         Then initialize attributes specific to an electric car.
+#         '''
+#         super().__init__(make, model, year)
+#         self.battery_size = 70
 
-    def describe_battery(self):
-        # Print statement describing the battery size.
-        print(f"This car has a {str(self.battery_size)}-kWh battery.")
+#     def describe_battery(self):
+#         # Print statement describing the battery size.
+#         print(f"This car has a {str(self.battery_size)}-kWh battery.")
 
-    def initialize_battery(self, battery_size_in):
-        self.battery_size = battery_size_in
+#     def initialize_battery(self, battery_size_in):
+#         self.battery_size = battery_size_in
+
+# my_tesla = ElectricCar('tesla', 'model s', 2016)
+# print(my_tesla.get_descriptive_name())
+# my_tesla.describe_battery()
+# my_tesla.initialize_battery(120)
+# my_tesla.describe_battery()
+
+
+from car import Car, ElectricCar
+
+my_new_car = Car('audi', 'a4', 2016)
+print(my_new_car.get_descriptive_name())
+
+my_new_car.odometer_reading = 23
+my_new_car.read_odometer()
+
+print("\n****\n")
 
 my_tesla = ElectricCar('tesla', 'model s', 2016)
+
 print(my_tesla.get_descriptive_name())
-my_tesla.describe_battery()
-my_tesla.initialize_battery(120)
-my_tesla.describe_battery()
+my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
