@@ -20,4 +20,27 @@
 # displayMulti("Or", 3)
 
 
-### Number 1 ###
+### Number 2 ###
+# '''
+# Input:
+# Charlie,Zoe,08123123123;Andre,Xavier,08111222333;Charlie,Xyz,08123123123;Jean,Summers,08001001001
+
+# Output:
+# === Output START ===
+# Log:
+# Charlie Zoe – 08123123123 : insert success
+# Andre Xavier – 08111222333 : insert success
+# Charlie Xyz – 08123123123 : duplicate phone number
+# Jean Summers – 08001001001 : insert success
+# '''
+
+# inp = "Charlie,Zoe,08123123123;Andre,Xavier,08111222333;Charlie,Xyz,08123123123;Jean,Summers,08001001001"
+
+
+# for i in inp.split(sep=","):
+#     print(i)
+
+# print(type(inp))
+
+a = "ak"
+print(a)
