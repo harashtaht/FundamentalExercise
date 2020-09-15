@@ -38,17 +38,17 @@ inp = "Charlie,Zoe,08123123123;Andre,Xavier,08111222333;Charlie,Xyz,08123123123;
 
 addressbook = []
 for i in inp.split(sep=";"):
-    # _ = []
-    print(i)
+    _ = ()
+    # print(i)
     # _.append(i)
     # addressbook.append(_)
     addressbook.append(i)
 
 # print(addressbook)
 
-for i in addressbook:
-    # print(type(i.split(sep=",")))
-    print(i.split(sep=","))
+# for i in addressbook:
+#     # print(type(i.split(sep=",")))
+#     print(i.split(sep=","))
 
 
 # print(addressbook[0]) #['Charlie,Zoe,08123123123']
@@ -84,3 +84,14 @@ class Address():
         return None
 
 # Address('Charlie', 'Zoe', '08123123123').show_input()
+
+inp = "Charlie,Zoe,08123123123;Andre,Xavier,08111222333;Charlie,Xyz,08123123123;Jean,Summers,08001001001"
+
+list = []
+for i in inp.split(sep=';'):
+    mylist = []
+    mylist.append(i)
+    mytuple = tuple(mylist)
+    list.append((mytuple))
+# print(list)
+# [('Charlie,Zoe,08123123123',), ('Andre,Xavier,08111222333',), ('Charlie,Xyz,08123123123',), ('Jean,Summers,08001001001',)]()tuplenew = {}
