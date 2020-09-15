@@ -22,23 +22,18 @@ class Address():
             self.last_name = list[1]
             self.number = list[2]
 
-    def show_input(self):
-        data_add = self.first_name + " " + self.last_name + " - " + self.number
-        print(data_add)
+    def log_data(self):
+        data_display = self.first_name + " " + self.last_name + " - " + self.number
+        # print(data_add) 
+        return data_display
 
-# for i in listReady:
-#     Address(i).show_input()
+dictOutput = {}
+listTemp = []
+for i in listReady:
+    if i[2] not in listTemp:
+        dictOutput[Address(i).log_data()] = "insert success"
+    elif i[2] in listTemp:
+        dictOutput[Address(i).log_data()] = "duplicate phone number"
+    listTemp.append(i[2])
 
-list_ = [['ax', 'by', '1'], ['bb', 'cy', '2'], ['cc', 'dx', '2']]
-
-dicttemp = {}
-listtemp = []
-for i in list_:
-    if i[2] not in listtemp:
-        dicttemp[i[0] +i[1] + i[2]] = "insert success"
-    if i[2] in listtemp:
-        dicttemp[i[0] +i[1] + i[2]] = "duplicate"
-    listtemp.append(i[2])
-    # print(listtemp)
-print(listtemp)
-print(dicttemp)
+print(dictOutput)
