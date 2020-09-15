@@ -27,6 +27,7 @@ class Address():
         # print(data_add) 
         return data_display
 
+# Function to create Log
 dictOutput = {}
 listTemp = []
 for i in listReady:
@@ -36,4 +37,32 @@ for i in listReady:
         dictOutput[Address(i).log_data()] = "duplicate phone number"
     listTemp.append(i[2])
 
-print(dictOutput)
+# for key, val in dictOutput.items():
+#     print(key, ':', val)
+
+# Function to create Phonebook
+# listOutput = []
+# for key, val in dictOutput.items():
+#     if val == "insert success":
+#         listOutput.append(key)
+
+# for i in range(len(listOutput)):
+#     print(f"{i+1}. {listOutput[i]}")
+
+
+### Cleanse the Code ###
+
+def separate(string):
+    x = input_.split(sep=';')
+    listReady = []
+    for i in x:
+        y = i.split(sep=',')
+        listReady.append(y)
+    return listReady
+
+print("Input:")
+# input_ = input()
+input_ = 'Charlie,Zoe,08123123123;Andre,Xavier,08111222333;Charlie,Xyz,08123123123;Jean,Summers,08001001001'
+
+separate(input_)
+print(listReady)
