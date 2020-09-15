@@ -11,13 +11,9 @@ x = input_.split(sep=';')
 listReady = []
 for i in x:
     y = i.split(sep=',')
-    # listReady.append(tuple(y))
     listReady.append(y)
 # print(listReady)
-# ('Charlie', 'Zoe', '08123123123'), ('Andre', 'Xavier', '08111222333'), ('Charlie', 'Xyz', '08123123123'), ('Jean', 'Summers', '08001001001')]
-
-# print(listReady[0][0])
-
+# [['Charlie', 'Zoe', '08123123123'], ['Andre', 'Xavier', '08111222333'], ['Charlie', 'Xyz', '08123123123'], ['Jean', 'Summers', '08001001001']]
 
 class Address():
 
@@ -30,32 +26,19 @@ class Address():
         data_add = self.first_name + " " + self.last_name + " - " + self.number
         print(data_add)
 
-    
-# Address(['Charlie', 'Zoe', '0812312312']).show_input()
+# for i in listReady:
+#     Address(i).show_input()
 
-for i in listReady:
-    Address(i).show_input()
+list_ = [['ax', 'by', '1'], ['bb', 'cy', '2'], ['cc', 'dx', '2']]
 
-
-# class Address():
-
-#     def __init__(self, first_name, last_name, number):
-#         self.first_name = first_name
-#         self.last_name = last_name
-#         self.number = number
-
-#     def show_input(self):
-#         data_add = self.first_name + " " + self.last_name + " - " + self.number
-#         print(data_add)
-
-#     def check_duplicate(self):
-#         return None
-
-# # Address('Charlie', 'Zoe', '08123123123').show_input()
-
-# # for i in listReady:
-# #     Address(i).show_input()
-# #     # print(i)
-
-# for i in x:
-#     print(i.split(sep=','))
+dicttemp = {}
+listtemp = []
+for i in list_:
+    if i[2] not in listtemp:
+        dicttemp[i[0] +i[1] + i[2]] = "insert success"
+    if i[2] in listtemp:
+        dicttemp[i[0] +i[1] + i[2]] = "duplicate"
+    listtemp.append(i[2])
+    # print(listtemp)
+print(listtemp)
+print(dicttemp)
