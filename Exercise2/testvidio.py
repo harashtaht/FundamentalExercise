@@ -21,77 +21,49 @@
 
 
 ### Number 2 ###
-# '''
-# Input:
-# Charlie,Zoe,08123123123;Andre,Xavier,08111222333;Charlie,Xyz,08123123123;Jean,Summers,08001001001
-
-# Output:
-# === Output START ===
-# Log:
-# Charlie Zoe – 08123123123 : insert success
-# Andre Xavier – 08111222333 : insert success
-# Charlie Xyz – 08123123123 : duplicate phone number
-# Jean Summers – 08001001001 : insert success
-# '''
-
-inp = "Charlie,Zoe,08123123123;Andre,Xavier,08111222333;Charlie,Xyz,08123123123;Jean,Summers,08001001001"
-
-addressbook = []
-for i in inp.split(sep=";"):
-    _ = ()
-    # print(i)
-    # _.append(i)
-    # addressbook.append(_)
-    addressbook.append(i)
-
-# print(addressbook)
-
-# for i in addressbook:
-#     # print(type(i.split(sep=",")))
-#     print(i.split(sep=","))
-
-
-# print(addressbook[0]) #['Charlie,Zoe,08123123123']
-# print(len(addressbook)) #4
-
-# for i in addressbook[0].split(sep=","):
-#     print(i)
-
-# for i in addressbook[0]:
-#     # print(type(i))
-#     print(i)
-
-# Cari threshold untuk check nomor sudah di input (duplikat)
-
-
-# Class untuk display Log
-# insert success/duplicate phone number not done
-
-list = ["Charlie,Zoe,08123123123"]
+def separate(string):
+    x = input_.split(sep=';')
+    listReady = []
+    for i in x:
+        y = i.split(sep=',')
+        listReady.append(y)
+        dictOutput = {}
+        listTemp = []   
+        for i in listReady:
+            if i[2] not in listTemp:
+                dictOutput[Address(i).log_data()] = "insert success"
+            elif i[2] in listTemp:
+                dictOutput[Address(i).log_data()] = "duplicate phone number"
+            listTemp.append(i[2])
+    for key, val in dictOutput.items():
+                print(key, ':', val)
+    print("Phone book:")
+    listOutput = []
+    for key, val in dictOutput.items():
+        if val == "insert success":
+            listOutput.append(key)
+    for i in range(len(listOutput)):
+        print(f"{i+1}. {listOutput[i]}")
 
 class Address():
 
-    def __init__(self, first_name, last_name, number):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.number = number
+    def __init__(self, list):
+            self.first_name = list[0]
+            self.last_name = list[1]
+            self.number = list[2]
 
-    def show_input(self):
-        data_add = self.first_name + " " + self.last_name + " - " + self.number
-        print(data_add)
+    def log_data(self):
+        data_display = self.first_name + " " + self.last_name + " - " + self.number
+        # print(data_add) 
+        return data_display
 
-    def check_duplicate(self):
-        return None
-
-# Address('Charlie', 'Zoe', '08123123123').show_input()
-
-inp = "Charlie,Zoe,08123123123;Andre,Xavier,08111222333;Charlie,Xyz,08123123123;Jean,Summers,08001001001"
-
-list = []
-for i in inp.split(sep=';'):
-    mylist = []
-    mylist.append(i)
-    mytuple = tuple(mylist)
-    list.append((mytuple))
-# print(list)
-# [('Charlie,Zoe,08123123123',), ('Andre,Xavier,08111222333',), ('Charlie,Xyz,08123123123',), ('Jean,Summers,08001001001',)]()tuplenew = {}
+print("Input:")
+# input_ = input()
+input_ = 'Charlie,Zoe,08123123123;Andre,Xavier,08111222333;Charlie,Xyz,08123123123;Jean,Summers,08001001001'
+print(input_)
+print("\n")
+print('''Output:
+=== Output START ===
+Log:''')
+separate(input_)
+print("=== Output END ===")
