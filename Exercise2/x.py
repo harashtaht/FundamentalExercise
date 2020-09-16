@@ -64,5 +64,5 @@ print("Input:")
 # input_ = input()
 input_ = 'Charlie,Zoe,08123123123;Andre,Xavier,08111222333;Charlie,Xyz,08123123123;Jean,Summers,08001001001'
 
-separate(input_)
-print(listReady)
+# separate(input_)
+# Address(listReady)
