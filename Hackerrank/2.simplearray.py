@@ -21,17 +21,22 @@
 
 # Part 2
 
-a = "17 28 30"
-b = "99 16 8"
-
 def appendList(x):
     ls = []
     for i in x.split():
         ls.append(int(i))
     return ls
 
-a = appendList(a)
-b = appendList(b)
+while True:
+    a = input()
+    b = input()
+    a = appendList(a)
+    b = appendList(b)
+    if (1<=a[0]<=100) and (1<=b[0]<=100):           
+        break 
+    else:
+        print("Please input number between 1-100.")
+        sys.exit()
 
 def compareTriplets(a,b):
     num_a = 0
