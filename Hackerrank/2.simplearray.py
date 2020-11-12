@@ -27,16 +27,10 @@ def appendList(x):
         ls.append(int(i))
     return ls
 
-while True:
-    a = input()
-    b = input()
-    a = appendList(a)
-    b = appendList(b)
-    if (1<=a[0]<=100) and (1<=b[0]<=100):           
-        break 
-    else:
-        print("Please input number between 1-100.")
-        sys.exit()
+a = input()
+b = input()
+a = appendList(a)
+b = appendList(b)
 
 def compareTriplets(a,b):
     num_a = 0
@@ -49,12 +43,8 @@ def compareTriplets(a,b):
         else:
             num_a += 0
             num_b += 0
-    ls = []
-    ls.append(num_a)
-    ls.append(num_b)
-    return ls
+    str = f'{num_a} {num_b}'
+    return str
 
 results = compareTriplets(a,b)
 print(results)
-
-# Need Constraints
