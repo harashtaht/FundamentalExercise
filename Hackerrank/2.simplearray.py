@@ -50,8 +50,10 @@
 # print(results)
 
 # Part 3
-x = "1000000001 1000000002 1000000003 1000000004 1000000005" #input2
-y = int("5") #input1
+# 1000000001 1000000002 1000000003 1000000004 1000000005
+
+y = int(input())
+x = input()
 
 def appendList(x):
     ls = []
@@ -61,9 +63,11 @@ def appendList(x):
 
 listNum = appendList(x)
 
-num = 0
-for i in range(y):
-    num += listNum[i]
-print(num)
+def aVeryBigSum(list, b):
+    num = 0
+    for i in range (b):
+        num += listNum[i]
+    return num
 
-#Tinggal buat function
+output = aVeryBigSum(listNum, y)
+print(output)
