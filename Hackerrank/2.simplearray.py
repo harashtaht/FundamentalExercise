@@ -50,3 +50,20 @@
 # print(results)
 
 # Part 3
+x = "1000000001 1000000002 1000000003 1000000004 1000000005" #input2
+y = int("5") #input1
+
+def appendList(x):
+    ls = []
+    for i in x.split():
+        ls.append(int(i))
+    return ls
+
+listNum = appendList(x)
+
+num = 0
+for i in range(y):
+    num += listNum[i]
+print(num)
+
+#Tinggal buat function
