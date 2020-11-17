@@ -21,30 +21,32 @@
 
 # Part 2
 
-def appendList(x):
-    ls = []
-    for i in x.split():
-        ls.append(int(i))
-    return ls
+# def appendList(x):
+#     ls = []
+#     for i in x.split():
+#         ls.append(int(i))
+#     return ls
 
-a = input()
-b = input()
-a = appendList(a)
-b = appendList(b)
+# a = input()
+# b = input()
+# a = appendList(a)
+# b = appendList(b)
 
-def compareTriplets(a,b):
-    num_a = 0
-    num_b = 0
-    for i in range(len(a)):
-        if a[i] > b[i]:
-            num_a += 1
-        elif b[i] > a[i]:
-            num_b += 1
-        else:
-            num_a += 0
-            num_b += 0
-    str = f'{num_a} {num_b}'
-    return str
+# def compareTriplets(a,b):
+#     num_a = 0
+#     num_b = 0
+#     for i in range(len(a)):
+#         if a[i] > b[i]:
+#             num_a += 1
+#         elif b[i] > a[i]:
+#             num_b += 1
+#         else:
+#             num_a += 0
+#             num_b += 0
+#     str = f'{num_a} {num_b}'
+#     return str
 
-results = compareTriplets(a,b)
-print(results)
+# results = compareTriplets(a,b)
+# print(results)
+
+# Part 3
