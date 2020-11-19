@@ -1,6 +1,12 @@
 # Part 1
 
-input_a = int(input())
+#input 
+# 3
+# 11 2 4
+# 4 5 6
+# 10 8 -12
+
+n = int(input())
 input1 = input()
 input2 = input()
 input3 = input()
@@ -20,12 +26,7 @@ toCount.append(arr1)
 toCount.append(arr2)
 toCount.append(arr3)
 
-num1 = 0
-for j in range(len(toCount)):
-    num1 += toCount[j][j]
+d1 = sum(toCount[x][x] for x in range(n))
+d2 = sum(toCount[x][n-1-x] for x in range(n))
 
-num2 = 0
-for j in range(len(toCount)):
-    num2 += toCount[j][input_a-1-j]
-
-print(abs(num1-num2))
+print(abs(d1-d2))
