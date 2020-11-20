@@ -20,26 +20,33 @@
 
 # Part 2: ratio of integers
 
+# input : 5
+# input2 : 1 1 0 -1 -1
+
+# n = int(input())
+
+# arr = list(map(int, input().split()))
+
+# def plusMinus(list):
+#     positive = 0
+#     negative = 0
+#     zeros = 0
+#     for i in range(len(list)):
+#         if list[i] > 0:
+#             positive += 1
+#         elif list[i] <0:
+#             negative += 1
+#         else:
+#             zeros += 1
+#     pos = positive/len(list)
+#     neg = negative/len(list)
+#     zer = zeros/len(list)
+#     print(f'{pos:.6f}')
+#     print(f'{neg:.6f}')
+#     print(f'{zer:.6f}')
+
+# plusMinus(arr)
+
+# Part 3: Staircase
+
 n = int(input())
-
-arr = list(map(int, input().split()))
-
-def plusMinus(list):
-    positive = 0
-    negative = 0
-    zeros = 0
-    for i in range(len(list)):
-        if list[i] > 0:
-            positive += 1
-        elif list[i] <0:
-            negative += 1
-        else:
-            zeros += 1
-    pos = positive/len(list)
-    neg = negative/len(list)
-    zer = zeros/len(list)
-    print(f'{pos:.6f}')
-    print(f'{neg:.6f}')
-    print(f'{zer:.6f}')
-
-plusMinus(arr)
