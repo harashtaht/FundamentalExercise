@@ -49,4 +49,10 @@
 
 # Part 3: Staircase
 
-n = int(input())
+# n = int(input())
+
+# for i in range(n):
+#     num = ''
+#     num += ' '*(n-i-1)
+#     num += '#'*(i+1)
+#     print(num)
