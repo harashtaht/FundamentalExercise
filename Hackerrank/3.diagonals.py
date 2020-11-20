@@ -7,26 +7,19 @@
 # 10 8 -12
 
 n = int(input())
-input1 = input()
-input2 = input()
-input3 = input()
-
-def appendList(x):
-    ls = []
-    for i in x.split():
-        ls.append(int(i))
-    return ls
-
-arr1 = appendList(input1)
-arr2 = appendList(input2)
-arr3 = appendList(input3)
 
 toCount = []
-toCount.append(arr1)
-toCount.append(arr2)
-toCount.append(arr3)
+for i in range(n):
+    i = input()
+    ls = []
+    for x in i.split():
+        ls.append(int(x))
+    toCount.append(ls)
 
-d1 = sum(toCount[x][x] for x in range(n))
-d2 = sum(toCount[x][n-1-x] for x in range(n))
+def diagonalDifference(list):
+    d1 = sum(list[x][x] for x in range(n))
+    d2 = sum(list[x][n-1-x] for x in range(n))
+    result = abs(d1-d2)
+    return result
 
-print(abs(d1-d2))
+print(diagonalDifference(toCount))
