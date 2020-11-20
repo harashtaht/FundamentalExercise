@@ -8,13 +8,7 @@
 
 n = int(input())
 
-toCount = []
-for i in range(n):
-    i = input()
-    ls = []
-    for x in i.split():
-        ls.append(int(x))
-    toCount.append(ls)
+toCount = [list(int(x) for x in input().split()) for i in range(n)]
 
 def diagonalDifference(list):
     d1 = sum(list[x][x] for x in range(n))
@@ -23,3 +17,13 @@ def diagonalDifference(list):
     return result
 
 print(diagonalDifference(toCount))
+
+# Part 2: ratio of integers
+
+# n = int(input())
+
+# arr = input()
+# arr1 = [list(int(x) for x in arr.split())]
+# # list = []
+# # arr1 = [list.append(i) for i in arr.split()]
+# print(arr1)
