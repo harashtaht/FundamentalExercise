@@ -56,3 +56,6 @@
 #     num += ' '*(n-i-1)
 #     num += '#'*(i+1)
 #     print(num)
+
+# Part 4: Mini-Max Sum
+
