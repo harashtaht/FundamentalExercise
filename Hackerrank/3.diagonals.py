@@ -59,3 +59,12 @@
 
 # Part 4: Mini-Max Sum
 
+# in: 1 3 5 7 9
+# out: 16 24
+# in : 1 2 3 4 5
+# out : 10 14
+
+# arr = list(map(int, input().split()))
+arr = [1, 2, 3, 4, 5]
+for i in range(len(arr)):
+    print(i)
