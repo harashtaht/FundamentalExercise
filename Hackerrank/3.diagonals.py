@@ -74,10 +74,6 @@
 # in: 3 2 1 3
 # out: 2
 
-# n = int(input())
-n = 4
-# nums = [int(x) for x in input().split()]
-nums = [3,2,1,3]
-
-# print(nums)
-
+n = int(input())
+candles = list(map(int, input().split()))
+print(candles.count(max(candles)))
