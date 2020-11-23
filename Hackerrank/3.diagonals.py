@@ -74,6 +74,9 @@
 # in: 3 2 1 3
 # out: 2
 
-n = int(input())
-candles = list(map(int, input().split()))
-print(candles.count(max(candles)))
+# n = int(input())
+# candles = list(map(int, input().split()))
+# print(candles.count(max(candles)))
+
+
+# Part 6: Time Conversion
