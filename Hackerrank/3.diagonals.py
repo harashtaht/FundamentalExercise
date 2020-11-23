@@ -64,7 +64,5 @@
 # in : 1 2 3 4 5
 # out : 10 14
 
-# arr = list(map(int, input().split()))
-arr = [1, 2, 3, 4, 5]
-for i in range(len(arr)):
-    print(i)
+nums = [int(x) for x in input().split()]
+print(sum(nums)-max(nums), sum(nums)-min(nums))
