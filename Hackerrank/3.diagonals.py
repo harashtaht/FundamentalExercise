@@ -64,5 +64,20 @@
 # in : 1 2 3 4 5
 # out : 10 14
 
-nums = [int(x) for x in input().split()]
-print(sum(nums)-max(nums), sum(nums)-min(nums))
+# nums = [int(x) for x in input().split()]
+# print(sum(nums)-max(nums), sum(nums)-min(nums))
+
+
+# Part 5: Birthday Cake Candles
+
+# in: 4
+# in: 3 2 1 3
+# out: 2
+
+# n = int(input())
+n = 4
+# nums = [int(x) for x in input().split()]
+nums = [3,2,1,3]
+
+# print(nums)
+
