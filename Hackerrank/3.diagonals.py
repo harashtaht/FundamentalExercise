@@ -84,21 +84,17 @@
 # in: 07:05:45PM
 # out: 19:05:45
 
-inp = input()
+# inp = input()
 
-def timeConversion(inp):
-    if (inp[-2:]=="PM") and int(inp[:2])!=12:
-        out = str(int(inp[:2])+12)+inp[2:-2]
-    elif (inp[-2:]=="PM") and int(inp[:2])==12:
-        out = inp[:-2]
-    elif (inp[-2:]=="AM") and int(inp[:2])==12:
-        out = str(int(inp[:2])-12)+"0"+inp[2:-2]
-    else:
-        out = inp[:-2]
-    print(out)
+# def timeConversion(inp):
+#     if (inp[-2:]=="PM") and int(inp[:2])!=12:
+#         out = str(int(inp[:2])+12)+inp[2:-2]
+#     elif (inp[-2:]=="PM") and int(inp[:2])==12:
+#         out = inp[:-2]
+#     elif (inp[-2:]=="AM") and int(inp[:2])==12:
+#         out = str(int(inp[:2])-12)+"0"+inp[2:-2]
+#     else:
+#         out = inp[:-2]
+#     print(out)
 
-timeConversion(inp)
-
-# test = ["07:05:45PM","07:05:45AM", "12:05:45PM", "12:05:45AM"]
-# for i in test:
-#     print(i, "  =   ", timeConversion(i))
+# timeConversion(inp)
