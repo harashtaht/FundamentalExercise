@@ -12,18 +12,25 @@ def catAndMouse(str):
 
     if (numC>numA) and (numC>numB):
         if abs(numC-numA) < abs(numC-numB):
-            print("cat A")
+            print("Cat A")
         elif abs(numC-numA) > abs(numC-numB):
-            print("cat B")
+            print("Cat B")
         elif abs(numC-numA) == abs(numC-numB):
-            print("mouse C")
+            print("Mouse C")
     elif (numC<numA) or (numC<numB):
         if abs(numC-numA) < abs(numC-numB):
-            print("cat A")
+            print("Cat A")
         elif abs(numC-numA) > abs(numC-numB):
-            print("cat B")
+            print("Cat B")
         elif abs(numC-numA) == abs(numC-numB):
-            print("mouse C")    
+            print("Mouse C")
+    elif (numC==numA) or (numC==numB):
+        if abs(numC-numA) < abs(numC-numB):
+            print("Cat A")
+        elif abs(numC-numA) > abs(numC-numB):
+            print("Cat B")
+        elif abs(numC-numA) == abs(numC-numB):
+            print("Mouse C")
 
 q = int(input())
 ls = []
